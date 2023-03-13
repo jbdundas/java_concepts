@@ -24,31 +24,34 @@ Output: false
 public class IsSubSequence {
 
 	/*
-	 * Steps:
+	 *  s=acb t=ahbgdc isIsoMorphic=true
 	 * 
 	 */
-	public boolean isSubsequence(String s, String t) {
-		
-		boolean isIsoMorphic = Boolean.FALSE;
-		char[] sArr = s.toCharArray();
-		Map<Character, Integer > posMap = new HashMap<Character, Integer>();
-		//loop through each substring character and replace it in source string.
-		for (int i=0;i<sArr.length;i++) {
-			Character sToReplace = sArr[i];
-			System.out.println("s Char:"+ sToReplace);
-			//find character s in destination array
-			 int positionOfChar = t.indexOf(sToReplace) ;
-			 if ( positionOfChar != -1) {
-				 posMap.put(sToReplace, positionOfChar);
-			 }
+	 public boolean isSubsequence(String s, String t) {
 			
+			boolean isSubsequence = Boolean.FALSE;
+			char[] sArr = s.toCharArray();
+			Map<Character, Integer > posMap = new HashMap<Character, Integer>();
+			int lastPosition = -10;
+			//loop through each substring character and replace it in source string.
+			for (int i=0;i<sArr.length;i++) {
+				Character sToReplace = sArr[i];
+				System.out.println("s Char:"+ sToReplace);
+				//find character s in destination array
+				 int positionOfChar = t.indexOf(sToReplace) ;
+				 System.out.println("i="+ i + "sToReplace="+sToReplace + " positionOfChar="+positionOfChar + " lastPosition="+lastPosition);
+				 if ( (positionOfChar != -1) && (positionOfChar > lastPosition) ) {
+					 lastPosition = positionOfChar;
+					 posMap.put(sToReplace, positionOfChar);
+				 }
+				
+			}
+			
+			if (posMap.size() == sArr.length) {
+				isSubsequence = Boolean.TRUE;
+			}
+			System.out.println("s="+ s + " t="+t + " isIsoMorphic="+ isSubsequence);
+			return isSubsequence;
 		}
-		
-		if (posMap.size() == sArr.length) {
-			isIsoMorphic = Boolean.TRUE;
-		}
-		System.out.println("s="+ s + " t="+t + " isIsoMorphic="+ isIsoMorphic);
-		return isIsoMorphic;
-	}
 
 }
