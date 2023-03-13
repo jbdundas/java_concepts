@@ -37,13 +37,15 @@ public class IsSubSequence {
 			//loop through each substring character and replace it in source string.
 			for (int i=0;i<sArr.length;i++) {
 				Character sToReplace = sArr[i];
-				System.out.println("s Char:"+ sToReplace);
+				System.out.println("i="+ i + "s Char:"+ sToReplace);
 				//find character s in destination array
 				 int positionOfChar = t.indexOf(sToReplace) ;
 				 System.out.println("i="+ i + "sToReplace="+sToReplace + " positionOfChar="+positionOfChar + " lastPosition="+lastPosition);
 				 if ( (positionOfChar != -1) && (positionOfChar > lastPosition) ) {
 					 lastPosition = positionOfChar;
 					 posMap.put(sToReplace, positionOfChar);
+				 }else {
+					 System.out.println("Skipping i="+i);
 				 }
 				
 			}

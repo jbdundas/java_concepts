@@ -9,5 +9,12 @@
 	  <maven.compiler.target>19</maven.compiler.target>
   </properties>
   
-  <dependencies></dependencies>
+  <dependencies>
+	  
+	  <dependency>
+		  <groupId>junit</groupId>
+		  <artifactId>junit</artifactId>
+		  <version>3.8.2</version>
+	  </dependency>
+  </dependencies>
 </project>
