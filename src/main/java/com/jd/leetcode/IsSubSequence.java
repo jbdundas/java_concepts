@@ -24,7 +24,8 @@ Output: false
 public class IsSubSequence {
 
 	/*
-	 *  s=acb t=ahbgdc isIsoMorphic=true
+	 *  16/18 test cases passed in leetcode.
+	 *  url: https://leetcode.com/problems/is-subsequence/?envType=study-plan&id=level-1
 	 * 
 	 */
 	 public boolean isSubsequence(String s, String t) {
