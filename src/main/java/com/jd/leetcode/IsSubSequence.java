@@ -24,37 +24,60 @@ Output: false
 public class IsSubSequence {
 
 	/*
-	 *  16/18 test cases passed in leetcode.
-	 *  url: https://leetcode.com/problems/is-subsequence/?envType=study-plan&id=level-1
+	 * 16/18 test cases passed in leetcode. url:
+	 * https://leetcode.com/problems/is-subsequence/?envType=study-plan&id=level-1
 	 * 
 	 */
-	 public boolean isSubsequence(String s, String t) {
-			
-			boolean isSubsequence = Boolean.FALSE;
-			char[] sArr = s.toCharArray();
-			Map<Character, Integer > posMap = new HashMap<Character, Integer>();
-			int lastPosition = -10;
-			//loop through each substring character and replace it in source string.
-			for (int i=0;i<sArr.length;i++) {
-				Character sToReplace = sArr[i];
-				System.out.println("i="+ i + "s Char:"+ sToReplace);
-				//find character s in destination array
-				 int positionOfChar = t.indexOf(sToReplace) ;
-				 System.out.println("i="+ i + "sToReplace="+sToReplace + " positionOfChar="+positionOfChar + " lastPosition="+lastPosition);
-				 if ( (positionOfChar != -1) && (positionOfChar > lastPosition) ) {
-					 lastPosition = positionOfChar;
-					 posMap.put(sToReplace, positionOfChar);
-				 }else {
-					 System.out.println("Skipping i="+i);
-				 }
-				
+	public boolean isSubsequence(String s, String t) {
+		System.out.println("s=" + s + " t=" + t);
+		boolean isIsoMorphic = Boolean.FALSE;
+		char[] sArr = s.toCharArray();
+		char[] tArr = s.toCharArray();
+		int sCharPositionFoundAt = -1;
+		int sPreviosCharPositionFoundAt = -1;
+		Map<Character, Integer> posMap = new HashMap<Character, Integer>();
+		// loop through each substring character and replace it in source string.
+		for (int i = 0; i < sArr.length; i++) {
+			System.out.println(" Iteration START:" + "i=" + i + " # posMap size=" + posMap.size());
+			Character sToReplace = sArr[i];
+			System.out.println("s Char:" + sToReplace);
+			// find character s in destination array
+
+			// if the map already has the character from earlier iteration, then skip this
+			// one.
+			if (posMap.get(sToReplace) != null) {
+				// i = t.indexOf(sToReplace);
+				continue;
+			} else {
+
+				sCharPositionFoundAt = t.indexOf(sToReplace);
+				System.out.println("i=" + i + ") sCharPositionFoundAt:" + t.indexOf(sToReplace)
+						+ " sPreviosCharPositionFoundAt =" + sPreviosCharPositionFoundAt);
+
+				if (t.indexOf(sToReplace) != -1) { // character was found in the string.
+
+					// is this character found before the last occurence. If yes, then skip it.
+					if (sCharPositionFoundAt > sPreviosCharPositionFoundAt) {
+						posMap.put(sToReplace, t.indexOf(sToReplace));
+						sPreviosCharPositionFoundAt = sCharPositionFoundAt;
+					}
+
+					
+
+				}
 			}
-			
-			if (posMap.size() == sArr.length) {
-				isSubsequence = Boolean.TRUE;
-			}
-			System.out.println("s="+ s + " t="+t + " isIsoMorphic="+ isSubsequence);
-			return isSubsequence;
+			System.out.println(" Iteration END:" + "i=" + i + " # posMap size=" + posMap.size() + " # sToReplace="
+					+ sToReplace + " sCharPositionFoundAt:" + t.indexOf(sToReplace));
 		}
+
+		if (posMap.size() == sArr.length) {
+			isIsoMorphic = Boolean.TRUE;
+		} else {
+			isIsoMorphic = Boolean.FALSE;
+		}
+		System.out.println("s=" + s + " t=" + t + " isIsoMorphic=" + isIsoMorphic);
+		System.out.println("=============================================================");
+		return isIsoMorphic;
+	}
 
 }
