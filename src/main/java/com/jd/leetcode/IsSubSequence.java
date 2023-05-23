@@ -23,15 +23,12 @@ Output: false
  */
 public class IsSubSequence {
 
-	public boolean isSubsequence(String s, String t) {
-		
-	}
 	/*
 	 * 16/18 test cases passed in leetcode. url:
 	 * https://leetcode.com/problems/is-subsequence/?envType=study-plan&id=level-1
 	 * 
 	 */
-	public boolean isSubsequence1(String s, String t) {
+	public boolean isSubsequence(String s, String t) {
 		System.out.println("s=" + s + " t=" + t);
 		boolean isIsoMorphic = Boolean.FALSE;
 		char[] sArr = s.toCharArray();
