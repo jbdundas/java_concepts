@@ -1,5 +1,7 @@
 package com.jd.main;
 
+import org.jd.java.collectors.GroupingByExample;
+
 import com.jd.leetcode.IsSubSequence;
 import com.jd.prep.java.StreamsExample;
 
@@ -9,6 +11,11 @@ public class Main {
 		generateSubSequence();
 		
 		generateFlatMap(); 
+		
+		GroupingByExample groupingByExample = new GroupingByExample();
+		groupingByExample.printEmployeesCountByDept(100);
+		
+		groupingByExample.printEmployeesByDept(100);
 		
 	}
 
