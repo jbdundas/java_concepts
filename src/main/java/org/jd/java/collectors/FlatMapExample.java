@@ -1,4 +1,4 @@
-package com.jd.prep.java;
+package org.jd.java.collectors;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-public class StreamsExample {
+public class FlatMapExample {
 
 	public static final Logger log = Logger.getLogger("Streams1");
 	

@@ -1,4 +1,4 @@
-package com.jd.prep.java;
+package org.jd.java.collectors;
 
 import java.util.Collections;
 import java.util.logging.Level;
@@ -26,7 +26,6 @@ public class CharacterOccurence {
 				.filter(x -> (x.count <= 1) ).findFirst();
 		
 		log.log(Level.INFO, "First Occurrence of non-repeating character in the string-{0} is \n {1}",new Object[] {input,result.get().beautify()});
-		
 	}
 }
 

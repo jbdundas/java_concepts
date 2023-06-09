@@ -1,13 +1,12 @@
-package com.jd.main;
+package org.jd.main;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.jd.java.collectors.CharacterOccurence;
+import org.jd.java.collectors.FlatMapExample;
 import org.jd.java.collectors.GroupingByExample;
-
-import com.jd.leetcode.IsSubSequence;
-import com.jd.prep.java.CharacterOccurence;
-import com.jd.prep.java.StreamsExample;
+import org.jd.leetcode.IsSubSequence;
 
 public class Main {
 
@@ -40,7 +39,7 @@ public class Main {
 
 	private static void generateFlatMap() {
 		//Examples about Java Streams.
-		StreamsExample streams1 = new StreamsExample();
+		FlatMapExample streams1 = new FlatMapExample();
 		streams1.testFlatMap();
 	}
 

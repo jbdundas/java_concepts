@@ -1,4 +1,4 @@
-package com.jd.prep.java;
+package org.jd.java.collectors;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-public class StreamsExample2 {
+public class EmployeeUpdateExample {
 
 	public static final Logger log = Logger.getLogger("StreamsExample2");
 	

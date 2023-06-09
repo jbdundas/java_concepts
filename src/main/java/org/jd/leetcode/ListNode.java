@@ -1,4 +1,4 @@
-package com.jd.leetcode;
+package org.jd.leetcode;
 
 public class ListNode {
 

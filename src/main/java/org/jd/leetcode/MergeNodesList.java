@@ -1,4 +1,4 @@
-package com.jd.leetcode;
+package org.jd.leetcode;
 
 /*
  * You are given the heads of two sorted linked lists list1 and list2.
