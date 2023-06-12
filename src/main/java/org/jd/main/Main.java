@@ -6,6 +6,7 @@ import java.util.logging.Logger;
 import org.jd.java.collectors.CharacterOccurence;
 import org.jd.java.collectors.FlatMapExample;
 import org.jd.java.collectors.GroupingByExample;
+import org.jd.java.collectors.ReducingExample;
 import org.jd.leetcode.IsSubSequence;
 
 public class Main {
@@ -13,24 +14,29 @@ public class Main {
 	public static final Logger log = Logger.getLogger("Main");
 	
 	public static void main(String[] args) {
-		printLineSeparator();
+		
 		generateSubSequence();
-		
 		printLineSeparator();
-		generateFlatMap(); 
 		
+		generateFlatMap(); 
 		printLineSeparator();	
+		
 		GroupingByExample groupingByExample = new GroupingByExample();
 		groupingByExample.printEmployeesCountByDept(100);
-		
 		printLineSeparator();
+		
 		groupingByExample.printEmployeesByDept(100);
-		
 		printLineSeparator();
+		
 		CharacterOccurence characterOccurence = new CharacterOccurence();
 		characterOccurence.stringOccurence("hello");
-		
 		printLineSeparator();
+		
+		ReducingExample<Integer> reducingExample = new ReducingExample<Integer>();
+		reducingExample.sumOfIntegers(101);
+		reducingExample.sumOfIntegersUsingSum(101);
+		printLineSeparator();
+		
 	}
 
 	private static void printLineSeparator() {
