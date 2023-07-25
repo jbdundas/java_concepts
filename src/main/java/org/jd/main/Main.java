@@ -1,5 +1,6 @@
 package org.jd.main;
 
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -8,6 +9,7 @@ import org.jd.java.collectors.FlatMapExample;
 import org.jd.java.collectors.GroupingByExample;
 import org.jd.java.collectors.ReducingExample;
 import org.jd.leetcode.IsSubSequence;
+import org.jd.leetcode.ReverseLinkedList;
 
 public class Main {
 
@@ -15,9 +17,27 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+		solveLeetCodeProblems();
+		
+		solveJavaConceptualProblems();
+		
+	}
+
+	private static void solveLeetCodeProblems() {
 		generateSubSequence();
 		printLineSeparator();
 		
+		CharacterOccurence characterOccurence = new CharacterOccurence();
+		characterOccurence.stringOccurence("hello");
+		printLineSeparator();
+		
+		ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
+		reverseLinkedList.reverseList(new int[] {1,2,3});
+		printLineSeparator();
+
+	}
+
+	private static void solveJavaConceptualProblems() {
 		generateFlatMap(); 
 		printLineSeparator();	
 		
@@ -28,15 +48,10 @@ public class Main {
 		groupingByExample.printEmployeesByDept(100);
 		printLineSeparator();
 		
-		CharacterOccurence characterOccurence = new CharacterOccurence();
-		characterOccurence.stringOccurence("hello");
-		printLineSeparator();
-		
 		ReducingExample<Integer> reducingExample = new ReducingExample<Integer>();
 		reducingExample.sumOfIntegers(101);
 		reducingExample.sumOfIntegersUsingSum(101);
 		printLineSeparator();
-		
 	}
 
 	private static void printLineSeparator() {
