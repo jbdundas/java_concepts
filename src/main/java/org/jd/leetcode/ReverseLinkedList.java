@@ -10,7 +10,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
@@ -40,16 +39,40 @@ public class ReverseLinkedList {
 	
 	public void reverseList(int[] arr) {
 		reverseListUsingJavaStreams(arr);
+		reverseListWithoutJavaStreams(arr);
 	}
 	
+	private void reverseListWithoutJavaStreams(int[] arr) {
+		log.log(Level.INFO,"Initiate reverseListWithoutJavaStreams-------------------------------------------");
+		List<ListNode> nodes = new LinkedList<ListNode>();
+	
+		int size = arr.length - 1;
+		ListNode previousNode = null;
+		//iterate from last index to the first one.
+		for (int i=size;i> -1 ;i--){
+			ListNode node = new ListNode();
+			if ( i == size) {
+				node.val = arr[size];
+				node.next = null;
+				previousNode = node;
+			}else{
+				node.val = arr[i];
+				node.next = previousNode;
+			}
+			log.log(Level.INFO,"Answer --> {0}",node.toString());
+		}
+	
+		//printList(nodes);
+		log.log(Level.INFO,"Terminate reverseListWithoutJavaStreams-------------------------------------------");
+	}
+
 	public void reverseListUsingJavaStreams(int[] arr) {
 		log.log(Level.INFO,"Original list is as follows-------------------------------------------");
 		printArray(arr);
 		List<Integer> reversedListUsingJavaCollections = IntStream.of(arr).boxed().toList();
-		reversedListUsingJavaCollections.stream().sorted(Collections.reverseOrder()).toList();
+		var newList = reversedListUsingJavaCollections.stream().sorted(Collections.reverseOrder()).toList();
 		log.log(Level.INFO,"Reversed list is as follows-------------------------------------------");
-		reversedListUsingJavaCollections.forEach( x -> log.log(Level.INFO,"Element --> {0}",x.toString()));
-		
+		newList.forEach( x -> log.log(Level.INFO,"Element --> {0}",x.toString()));
 	}
 
 	private void printArray(int[] arr) {
@@ -57,8 +80,8 @@ public class ReverseLinkedList {
 			log.log(Level.INFO,"Element --> {0}",i);
 	}
 	
-    public ListNode reverseList(ListNode head) {
-		return head;
+    public void printList(List<ListNode> nodes) {
+    	nodes.forEach( x -> log.log(Level.INFO,"Answer --> {0}",x.toString()) );
     }
 	
 
@@ -67,7 +90,12 @@ public class ReverseLinkedList {
 	    ListNode next;
 	    ListNode() {}
 	    ListNode(int val) { this.val = val; }
-	   ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+	    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+		@Override
+		public String toString() {
+			return "ListNode [val=" + val + ", next=" + next + "]";
+		}
+	    
 	}
 
 }

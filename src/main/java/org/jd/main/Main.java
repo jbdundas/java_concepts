@@ -1,9 +1,7 @@
 package org.jd.main;
 
-import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import org.jd.java.collectors.CharacterOccurence;
 import org.jd.java.collectors.FlatMapExample;
 import org.jd.java.collectors.GroupingByExample;
@@ -16,11 +14,12 @@ public class Main {
 	public static final Logger log = Logger.getLogger("Main");
 	
 	public static void main(String[] args) {
+		ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
+		reverseLinkedList.reverseList(new int[] {1,2,3});
+		printLineSeparator();
 		
-		solveLeetCodeProblems();
-		
-		solveJavaConceptualProblems();
-		
+		//solveLeetCodeProblems();
+		//solveJavaConceptualProblems();
 	}
 
 	private static void solveLeetCodeProblems() {
