@@ -14,8 +14,9 @@ public class Main {
 	public static final Logger log = Logger.getLogger("Main");
 	
 	public static void main(String[] args) {
+		
 		ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
-		reverseLinkedList.reverseList(new int[] {1,2,3});
+		//reverseLinkedList.reverseList(new int[] {1,2,3});
 		printLineSeparator();
 		
 		//solveLeetCodeProblems();
