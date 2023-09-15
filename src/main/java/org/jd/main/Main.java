@@ -8,6 +8,8 @@ import org.jd.java.collectors.GroupingByExample;
 import org.jd.java.collectors.ReducingExample;
 import org.jd.leetcode.IsSubSequence;
 import org.jd.leetcode.ReverseLinkedList;
+import org.jd.leetcode.RunningSum;
+import org.jd.leetcode.VerticalMoveTest;
 
 public class Main {
 
@@ -15,12 +17,20 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
+		//VerticalMoveTest test = new VerticalMoveTest();
+		//test.start();
+		
+		//ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
 		//reverseLinkedList.reverseList(new int[] {1,2,3});
-		printLineSeparator();
+		//printLineSeparator();
 		
 		//solveLeetCodeProblems();
 		//solveJavaConceptualProblems();
+		
+		RunningSum runningSum = new RunningSum();
+		int[] input = new int[] {1,2,3,4};
+		runningSum.execute(input);
+		
 	}
 
 	private static void solveLeetCodeProblems() {
