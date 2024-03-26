@@ -6,10 +6,15 @@ import org.jd.java.collectors.CharacterOccurence;
 import org.jd.java.collectors.FlatMapExample;
 import org.jd.java.collectors.GroupingByExample;
 import org.jd.java.collectors.ReducingExample;
+import org.jd.leetcode.GreatestCommonAdvisor;
 import org.jd.leetcode.IsSubSequence;
+import org.jd.leetcode.KidsWithGreatestNumberOfCandies;
+import org.jd.leetcode.MergeStringAlternatively;
 import org.jd.leetcode.ReverseLinkedList;
 import org.jd.leetcode.RunningSum;
 import org.jd.leetcode.VerticalMoveTest;
+
+import junit.framework.Assert;
 
 public class Main {
 
@@ -17,15 +22,15 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		//VerticalMoveTest test = new VerticalMoveTest();
-		//test.start();
+		VerticalMoveTest test = new VerticalMoveTest();
+		test.start();
 		
-		//ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
-		//reverseLinkedList.reverseList(new int[] {1,2,3});
-		//printLineSeparator();
+		ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
+		reverseLinkedList.reverseList(new int[] {1,2,3});
+		printLineSeparator();
 		
-		//solveLeetCodeProblems();
-		//solveJavaConceptualProblems();
+		solveLeetCodeProblems();
+		solveJavaConceptualProblems();
 		
 		RunningSum runningSum = new RunningSum();
 		int[] input = new int[] {1,2,3,4};
@@ -43,6 +48,26 @@ public class Main {
 		
 		ReverseLinkedList reverseLinkedList = new ReverseLinkedList();
 		reverseLinkedList.reverseList(new int[] {1,2,3});
+		printLineSeparator();
+		
+		MergeStringAlternatively mergeStringAlternatively = new MergeStringAlternatively();
+		Assert.assertEquals(mergeStringAlternatively.mergeAlternately("abc", "pqr"), "apbqcr");
+		Assert.assertEquals(mergeStringAlternatively.mergeAlternately("ab", "pqrs"), "apbqrs");
+		Assert.assertEquals(mergeStringAlternatively.mergeAlternately("abcd", "pq"), "apbqcd");
+		printLineSeparator();
+		
+		GreatestCommonAdvisor greatestCommonAdvisor = new GreatestCommonAdvisor();
+		Assert.assertEquals(greatestCommonAdvisor.gcdOfStrings("ABCABC", "ABC"),"ABC");
+		Assert.assertEquals(greatestCommonAdvisor.gcdOfStrings("ABABAB", "ABAB"),"AB");
+		Assert.assertEquals(greatestCommonAdvisor.gcdOfStrings("LEET", "CODE"),"");
+		Assert.assertEquals(greatestCommonAdvisor.gcdOfStrings("TAUXXTAUXXTAUXXTAUXXTAUXX","TAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXXTAUXX"), "TAUXX");
+		Assert.assertEquals(greatestCommonAdvisor.gcdOfStrings("AA", "A"),"A");
+		Assert.assertEquals(greatestCommonAdvisor.gcdOfStrings("AAAAAAAAA", "AAACCC"),"");
+		Assert.assertEquals(greatestCommonAdvisor.gcdOfStrings("ABABABAB", "ABAB"),"ABAB");
+		printLineSeparator();
+		
+		KidsWithGreatestNumberOfCandies kidsWithGreatestNumberOfCandies = new KidsWithGreatestNumberOfCandies();
+		kidsWithGreatestNumberOfCandies.kidsWithCandies(new int[] {12,1,12} ,10);
 		printLineSeparator();
 
 	}
