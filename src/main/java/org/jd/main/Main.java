@@ -6,6 +6,7 @@ import org.jd.java.collectors.CharacterOccurence;
 import org.jd.java.collectors.FlatMapExample;
 import org.jd.java.collectors.GroupingByExample;
 import org.jd.java.collectors.ReducingExample;
+import org.jd.leetcode.CanPlaceFlowers;
 import org.jd.leetcode.GreatestCommonAdvisor;
 import org.jd.leetcode.IsSubSequence;
 import org.jd.leetcode.KidsWithGreatestNumberOfCandies;
@@ -22,6 +23,9 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+		solveLeetCodeProblems();
+		solveJavaConceptualProblems();
+		
 		VerticalMoveTest test = new VerticalMoveTest();
 		test.start();
 		
@@ -29,8 +33,7 @@ public class Main {
 		reverseLinkedList.reverseList(new int[] {1,2,3});
 		printLineSeparator();
 		
-		solveLeetCodeProblems();
-		solveJavaConceptualProblems();
+	
 		
 		RunningSum runningSum = new RunningSum();
 		int[] input = new int[] {1,2,3,4};
@@ -67,9 +70,12 @@ public class Main {
 		printLineSeparator();
 		
 		KidsWithGreatestNumberOfCandies kidsWithGreatestNumberOfCandies = new KidsWithGreatestNumberOfCandies();
-		kidsWithGreatestNumberOfCandies.kidsWithCandies(new int[] {12,1,12} ,10);
+		//Input: candies = [2,3,5,1,3], extraCandies = 3 . Output: [true,true,true,false,true] 
+		Assert.assertEquals(kidsWithGreatestNumberOfCandies.kidsWithCandies(new int[] {2,3,5,1,3} , 3), new boolean[] {true,true,true,false,true} );
 		printLineSeparator();
-
+		
+		CanPlaceFlowers canPlaceFlowers = new CanPlaceFlowers();
+		canPlaceFlowers.canPlaceFlowers(null, 0);
 	}
 
 	private static void solveJavaConceptualProblems() {
