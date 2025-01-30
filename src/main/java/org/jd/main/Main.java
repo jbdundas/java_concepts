@@ -2,6 +2,7 @@ package org.jd.main;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.jd.interview.prep.SegregatePrimeNumbers;
 import org.jd.java.collectors.CharacterOccurence;
 import org.jd.java.collectors.FlatMapExample;
 import org.jd.java.collectors.GroupingByExample;
@@ -23,6 +24,9 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+		SegregatePrimeNumbers segregatePrimeNumbers = new SegregatePrimeNumbers();
+		segregatePrimeNumbers.segregateNumbers();
+		
 		solveLeetCodeProblems();
 		solveJavaConceptualProblems();
 		
@@ -33,11 +37,12 @@ public class Main {
 		reverseLinkedList.reverseList(new int[] {1,2,3});
 		printLineSeparator();
 		
-	
 		
 		RunningSum runningSum = new RunningSum();
 		int[] input = new int[] {1,2,3,4};
 		runningSum.execute(input);
+		
+		
 		
 	}
 
