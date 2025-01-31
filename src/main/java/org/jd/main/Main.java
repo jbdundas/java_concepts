@@ -2,6 +2,8 @@ package org.jd.main;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import org.jd.interview.prep.NonConsecutiveNumbersInArray;
 import org.jd.interview.prep.SegregatePrimeNumbers;
 import org.jd.java.collectors.CharacterOccurence;
 import org.jd.java.collectors.FlatMapExample;
@@ -24,12 +26,16 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		SegregatePrimeNumbers segregatePrimeNumbers = new SegregatePrimeNumbers();
-		segregatePrimeNumbers.segregateNumbers();
+		solveInterviewQuestions();
+		//solveLeetCodeProblems();
+		//solveJavaConceptualProblems();
+		//solveOtherQuestions();
 		
-		solveLeetCodeProblems();
-		solveJavaConceptualProblems();
 		
+		
+	}
+
+	private static void solveOtherQuestions() {
 		VerticalMoveTest test = new VerticalMoveTest();
 		test.start();
 		
@@ -41,9 +47,19 @@ public class Main {
 		RunningSum runningSum = new RunningSum();
 		int[] input = new int[] {1,2,3,4};
 		runningSum.execute(input);
-		
-		
-		
+	}
+
+	private static void solveInterviewQuestions() {
+		SegregatePrimeNumbers segregatePrimeNumbers = new SegregatePrimeNumbers();
+		segregatePrimeNumbers.segregateNumbers();
+		System.out.println("---------------------------------------------------------");
+		NonConsecutiveNumbersInArray nonConsecutiveNumbersInArray = new NonConsecutiveNumbersInArray();
+		int[] inputArr = new int[]{1,2,3,4,5,6} ;
+		int[] inputArr2 = new int[]{2,1,3,4,5,6} ;
+		int[] inputArr3 = new int[]{1,2,3,4,8,6} ;
+		nonConsecutiveNumbersInArray.assertAreConsecutiveElemsPresentInArray(inputArr);
+		nonConsecutiveNumbersInArray.assertAreConsecutiveElemsPresentInArray(inputArr2);
+		nonConsecutiveNumbersInArray.assertAreConsecutiveElemsPresentInArray(inputArr3);
 	}
 
 	private static void solveLeetCodeProblems() {
