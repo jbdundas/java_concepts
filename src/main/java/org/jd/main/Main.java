@@ -26,12 +26,10 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		solveInterviewQuestions();
-		//solveLeetCodeProblems();
-		//solveJavaConceptualProblems();
-		//solveOtherQuestions();
-		
-		
+		solveArrayQuestions();
+		solveLeetCodeProblems();
+		solveJavaConceptualProblems();
+		solveOtherQuestions();
 		
 	}
 
@@ -49,10 +47,11 @@ public class Main {
 		runningSum.execute(input);
 	}
 
-	private static void solveInterviewQuestions() {
+	private static void solveArrayQuestions() {
 		SegregatePrimeNumbers segregatePrimeNumbers = new SegregatePrimeNumbers();
 		segregatePrimeNumbers.segregateNumbers();
-		System.out.println("---------------------------------------------------------");
+		printLineSeparator();
+		
 		NonConsecutiveNumbersInArray nonConsecutiveNumbersInArray = new NonConsecutiveNumbersInArray();
 		int[] inputArr = new int[]{1,2,3,4,5,6} ;
 		int[] inputArr2 = new int[]{2,1,3,4,5,6} ;
@@ -60,6 +59,7 @@ public class Main {
 		nonConsecutiveNumbersInArray.assertAreConsecutiveElemsPresentInArray(inputArr);
 		nonConsecutiveNumbersInArray.assertAreConsecutiveElemsPresentInArray(inputArr2);
 		nonConsecutiveNumbersInArray.assertAreConsecutiveElemsPresentInArray(inputArr3);
+		printLineSeparator();
 	}
 
 	private static void solveLeetCodeProblems() {
