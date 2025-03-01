@@ -17,8 +17,7 @@ import org.jd.leetcode.MergeStringAlternatively;
 import org.jd.leetcode.ReverseLinkedList;
 import org.jd.leetcode.RunningSum;
 import org.jd.leetcode.VerticalMoveTest;
-
-import junit.framework.Assert;
+import org.junit.Assert;
 
 public class Main {
 
@@ -26,10 +25,10 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		solveArrayQuestions();
+		//solveArrayQuestions();
 		solveLeetCodeProblems();
-		solveJavaConceptualProblems();
-		solveOtherQuestions();
+		//solveJavaConceptualProblems();
+		//solveOtherQuestions();
 		
 	}
 
@@ -92,7 +91,7 @@ public class Main {
 		
 		KidsWithGreatestNumberOfCandies kidsWithGreatestNumberOfCandies = new KidsWithGreatestNumberOfCandies();
 		//Input: candies = [2,3,5,1,3], extraCandies = 3 . Output: [true,true,true,false,true] 
-		Assert.assertEquals(kidsWithGreatestNumberOfCandies.kidsWithCandies(new int[] {2,3,5,1,3} , 3), new boolean[] {true,true,true,false,true} );
+		Assert.assertArrayEquals(kidsWithGreatestNumberOfCandies.kidsWithCandies(new int[] {2,3,5,1,3} , 3), new boolean[] {true,true,true,false,true} );
 		printLineSeparator();
 		
 		CanPlaceFlowers canPlaceFlowers = new CanPlaceFlowers();

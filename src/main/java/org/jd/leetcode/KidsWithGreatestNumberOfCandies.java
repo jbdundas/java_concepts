@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.IntStream;
 
 /**
  * 1431. Kids With the Greatest Number of Candies Easy Topics Companies Hint
@@ -57,15 +58,21 @@ import java.util.function.Predicate;
  * 
  */
 public class KidsWithGreatestNumberOfCandies {
-
-	public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
-        List<Boolean> result = new LinkedList<>();
+	
+	//solve using Java 8 Streams.
+	public boolean[] kidsWithCandies(int[] candies, int extraCandies) {
+        boolean[] result = new boolean[candies.length];
 		var maxValue = Arrays.stream(candies).max();
-		Predicate<Integer> candiePredicate = (x) -> (x.intValue() + extraCandies >= maxValue.getAsInt()) ? true :false ;     
-		Arrays.stream(candies).forEach( x -> {
-			result.add(candiePredicate.test(x));
-		});
-				
+		Predicate<Integer> candiePredicate = (x) -> (x.intValue() + extraCandies >= maxValue.getAsInt()) ? true :false ;  
+		var resultList = Arrays.stream(candies).mapToObj(x -> candiePredicate.test(x)).toList();
+		
+		//there is no direct function, at this time, to convert from Boolean to boolean array through streams. So, we convert it manually and return it to the method.
+		//still, we will search for a better way to improve this code snippet.
+		for (int i=0; i < resultList.size(); i++) {
+			result[i] = resultList.get(i);
+			System.out.println(result[i]);
+		}
+		
 		return result;
     }
 
