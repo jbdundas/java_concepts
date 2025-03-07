@@ -96,7 +96,7 @@ public class Main {
 		printLineSeparator();
 		
 		ReverseVowelsInString reverseVowelsInString = new ReverseVowelsInString();
-		Assert.assertEquals(reverseVowelsInString.reverseVowels("IceCreAm"),"AceCreIm");
+		Assert.assertEquals("AceCreIm",reverseVowelsInString.reverseVowels("IceCreAm"));
 		
 	}
 

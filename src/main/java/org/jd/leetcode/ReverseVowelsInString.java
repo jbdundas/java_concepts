@@ -34,17 +34,14 @@ Constraints:
 
  */
 
-//Work In Progress. 
 public class ReverseVowelsInString {
 
   public String reverseVowels(String s) {
-	  System.out.println("Input: " + s.toString());
 	  char[] inputArr = s.toCharArray();
 	  int[] identifiedVowelsIndex = new int[inputArr.length];
 	  char[] vowelsFound = new char[inputArr.length];
 			  
 	  String vowels = "aeiouAEIOU";
-	  //int start = 0, end = inputArr.length - 1;
 	  int j = 0;
 	  for ( int i=0; i< inputArr.length - 1 ; i++) {
 		  char inputChar = inputArr[i];
@@ -57,14 +54,17 @@ public class ReverseVowelsInString {
 		  }
 	  }
 	  
-	  var reversedArray = Arrays.asList(vowelsFound).reversed().toString().toCharArray();
-	  for ( int i =0; i< identifiedVowelsIndex.length - 1; i++) {
-		  inputArr[i] = reversedArray[i];
-		  System.out.println(inputArr[i]);
-	  }
+	  //reverse the order of the found vowels.
+	  var vowelsFound2 = Arrays.copyOf(vowelsFound,j);
+	  var reversedArray = new StringBuilder(String.valueOf(vowelsFound2)).reverse().toString().toCharArray();
 	  
+	  //update the array with the reversed vowel's position.
+	  for ( int i = 0; i <= j-1 ; i++) {
+		  var position = identifiedVowelsIndex[i];
+		  inputArr[position] = reversedArray[i];
+	  }
+		
 	  String result = new String(inputArr);
-	  System.out.println("Result: " + result);
 	  return result;
   }
 
