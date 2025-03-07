@@ -95,9 +95,11 @@ public class Main {
 		Assert.assertArrayEquals(kidsWithGreatestNumberOfCandies.kidsWithCandies(new int[] {2,3,5,1,3} , 3), new boolean[] {true,true,true,false,true} );
 		printLineSeparator();
 		
+		//Submitted on Leetcode. Accepted solution :) .URL: https://leetcode.com/problems/reverse-vowels-of-a-string/submissions/1565539725
 		ReverseVowelsInString reverseVowelsInString = new ReverseVowelsInString();
-		Assert.assertEquals("AceCreIm",reverseVowelsInString.reverseVowels("IceCreAm"));
-		
+		Assert.assertEquals("AceCreIm",reverseVowelsInString.reverseVowels("IceCreAm"));//this test case is passing.
+		Assert.assertEquals("leotcede",reverseVowelsInString.reverseVowels("leetcode"));//this test case is passing.
+		printLineSeparator();
 	}
 
 	private static void solveJavaConceptualProblems() {
