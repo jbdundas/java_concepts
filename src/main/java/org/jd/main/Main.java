@@ -15,6 +15,7 @@ import org.jd.leetcode.IsSubSequence;
 import org.jd.leetcode.KidsWithGreatestNumberOfCandies;
 import org.jd.leetcode.MergeStringAlternatively;
 import org.jd.leetcode.ReverseLinkedList;
+import org.jd.leetcode.ReverseVowelsInString;
 import org.jd.leetcode.RunningSum;
 import org.jd.leetcode.VerticalMoveTest;
 import org.junit.Assert;
@@ -94,8 +95,9 @@ public class Main {
 		Assert.assertArrayEquals(kidsWithGreatestNumberOfCandies.kidsWithCandies(new int[] {2,3,5,1,3} , 3), new boolean[] {true,true,true,false,true} );
 		printLineSeparator();
 		
-		CanPlaceFlowers canPlaceFlowers = new CanPlaceFlowers();
-		canPlaceFlowers.canPlaceFlowers(null, 0);
+		ReverseVowelsInString reverseVowelsInString = new ReverseVowelsInString();
+		Assert.assertEquals(reverseVowelsInString.reverseVowels("IceCreAm"),"AceCreIm");
+		
 	}
 
 	private static void solveJavaConceptualProblems() {
