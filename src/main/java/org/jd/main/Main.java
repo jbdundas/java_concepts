@@ -16,6 +16,7 @@ import org.jd.leetcode.KidsWithGreatestNumberOfCandies;
 import org.jd.leetcode.MergeStringAlternatively;
 import org.jd.leetcode.ReverseLinkedList;
 import org.jd.leetcode.ReverseVowelsInString;
+import org.jd.leetcode.ReverseWordsInString;
 import org.jd.leetcode.RunningSum;
 import org.jd.leetcode.VerticalMoveTest;
 import org.junit.Assert;
@@ -99,6 +100,11 @@ public class Main {
 		ReverseVowelsInString reverseVowelsInString = new ReverseVowelsInString();
 		Assert.assertEquals("AceCreIm",reverseVowelsInString.reverseVowels("IceCreAm"));//this test case is passing.
 		Assert.assertEquals("leotcede",reverseVowelsInString.reverseVowels("leetcode"));//this test case is passing.
+		printLineSeparator();
+		
+		ReverseWordsInString reverseWordsInString = new ReverseWordsInString();
+		Assert.assertEquals("blue is sky the",reverseWordsInString.reverseWords("the sky is blue"));
+		Assert.assertEquals("world hello",reverseWordsInString.reverseWords("  hello world  "));
 		printLineSeparator();
 	}
 
