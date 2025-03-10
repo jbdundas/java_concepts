@@ -45,7 +45,7 @@ Follow-up: If the string data type is mutable in your language, can you solve it
  */
 public class ReverseWordsInString {
 	public String reverseWords(String s) {
-		var result = Arrays.asList(s.trim().split(" ")).reversed().toString();
+		var result = Arrays.asList(s.trim().split(" ")).reversed().stream().reduce( (x,y) -> x + " " + y).get();
 		System.out.println("Result"+result);
 		return result;
 	}
