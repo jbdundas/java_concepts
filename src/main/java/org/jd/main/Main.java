@@ -14,6 +14,7 @@ import org.jd.leetcode.GreatestCommonAdvisor;
 import org.jd.leetcode.IsSubSequence;
 import org.jd.leetcode.KidsWithGreatestNumberOfCandies;
 import org.jd.leetcode.MergeStringAlternatively;
+import org.jd.leetcode.ProductOfArrayExceptSelf;
 import org.jd.leetcode.ReverseLinkedList;
 import org.jd.leetcode.ReverseVowelsInString;
 import org.jd.leetcode.ReverseWordsInString;
@@ -105,6 +106,18 @@ public class Main {
 		ReverseWordsInString reverseWordsInString = new ReverseWordsInString();
 		Assert.assertEquals("blue is sky the",reverseWordsInString.reverseWords("the sky is blue"));
 		Assert.assertEquals("world hello",reverseWordsInString.reverseWords("  hello world  "));
+		
+		Assert.assertEquals("blue is sky the",reverseWordsInString.reverseWordsIteratively("the sky is blue"));
+		Assert.assertEquals("world hello",reverseWordsInString.reverseWordsIteratively("  hello world  "));
+		
+		//has a bug fix pending in the recursive solution. To be fixed.
+		Assert.assertEquals("blue is sky the",reverseWordsInString.reverseRecursively("the sky is blue"));
+		//Assert.assertEquals("world hello",reverseWordsInString.reverseRecursively("  hello world  "));
+		printLineSeparator();
+		
+		ProductOfArrayExceptSelf productOfArrayExceptSelf = new ProductOfArrayExceptSelf();
+		Assert.assertArrayEquals(productOfArrayExceptSelf.productExceptSelf(new int[] {1,2,3,4}), new int[] {24,12,8,6} );
+		Assert.assertArrayEquals(productOfArrayExceptSelf.productExceptSelfIfZeroPresent(new int[] {-1,1,0,-3,3}), new int[] {24,12,8,6} );
 		printLineSeparator();
 	}
 

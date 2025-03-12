@@ -1,6 +1,11 @@
 package org.jd.leetcode;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Stack;
+import java.util.stream.IntStream;
 
 /*
  Given an input string s, reverse the order of the words.
@@ -45,6 +50,43 @@ Follow-up: If the string data type is mutable in your language, can you solve it
  */
 public class ReverseWordsInString {
 	public String reverseWords(String s) {
-		  return Arrays.asList(s.trim().split(" ")).reversed().stream().reduce( (x,y) -> x.trim() + " " + y.trim()).get();
+		return Arrays.asList(s.trim().split(" ")).reversed().stream().reduce((x, y) -> x.trim() + " " + y.trim()).get();
 	}
+	
+	
+	//Space Complexity for this approach is O(N).
+	public String reverseWordsIteratively(String s) {
+		String[] words = s.trim().split(" ");
+		String result = "";
+		
+		for (int i = words.length - 1; i >= 0; i--) {
+			if (i >= 0) {
+				result = result.trim() + " " + words[i].trim();
+			}
+		}
+		System.out.println("reverseWordsIteratively result = " + result);
+		return result.trim();
+	}
+	
+	StringBuilder resultSB = new StringBuilder();
+	
+	public String reverseRecursively(String s) {
+		
+		String words[] = s.split(" ");
+		String result = callRecursively(words.length-1,words);
+		System.out.println("reverseRecursively = "+ result);
+		return result;
+	}
+
+
+	private String callRecursively(int i,String[] words) {
+		if ( i >= 0 ) {
+			resultSB.append(words[i] + " ");
+			i--;
+			callRecursively(i,words);
+		}
+		return resultSB.toString().trim();
+	}
+	
+
 }
