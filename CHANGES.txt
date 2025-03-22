@@ -1,3 +1,25 @@
 CHANGES
 
-1. 12-June-2023 -> Added an example of sum of even integers.
+12-June-2023 -> 1. Added an example of sum of even integers.
+
+3/20/2025
+1. 
+2. Find the Non coprime number?
+3. Find the longest palindrome. Fibonacci series.
+4. api gateway, split by comma and reverse a string, return substring until repeating character is found, spring security, jwt token 
+contents and whats signature, whats are considered during code review, performance of db operations, what are done for query 
+optimizations, clustered vs non clustered index, hiberante vs jpa, purpose of default method, multiple interface with same 
+default method being implemented by a class, write a rest controller, controller vs restcontroller, when is autowired dependency injected, 
+component vs service, how doesn jpa repositiry transform to query, what is REST, ways to communicate between ms, 
+i have to do some action before reaching the controller streams using custom comparator, equals method in object, transient keyword use,
+ why microservices, what are disadvantages of microservices, synchronization strageties, CI/CD, how is the build process done, 
+ how is rollback done in transactional spring
+5. multi threading and concurrency concepts.
+6) exception handling questions ( including in Spring) ControllerAdvice.
+7) spring interview questions especially spring security, spring rest, 
+8) spring transactional
+9) final keyword.
+10) java collections including ConcurrentHashMap
+11) Java Streams and Collectors groupBby, Predicates, Types of Interfaces..Functional Interface.
+12) abstract classes, default methods..
+
