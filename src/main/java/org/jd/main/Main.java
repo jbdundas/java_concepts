@@ -28,10 +28,10 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		//solveArrayQuestions();
+		solveArrayQuestions();
 		solveLeetCodeProblems();
-		//solveJavaConceptualProblems();
-		//solveOtherQuestions();
+		solveJavaConceptualProblems();
+		solveOtherQuestions();
 		
 	}
 
@@ -116,9 +116,8 @@ public class Main {
 		printLineSeparator();
 		
 		ProductOfArrayExceptSelf productOfArrayExceptSelf = new ProductOfArrayExceptSelf();
-		Assert.assertArrayEquals(productOfArrayExceptSelf.productExceptSelf(new int[] {1,2,3,4}), new int[] {24,12,8,6} );
-		//Assert.assertArrayEquals(productOfArrayExceptSelf.productExceptSelfIfZeroPresent(new int[] {1,2,3,4}), new int[] {24,12,8,6} );
-		Assert.assertArrayEquals(productOfArrayExceptSelf.productExceptSelfIfZeroPresent(new int[] {-1,1,0,-3,3}), new int[] {0,0,9,0,0} );
+		Assert.assertArrayEquals(productOfArrayExceptSelf.productExceptSelfWhenElementIsZero(new int[] {1,2,3,4}), new int[] {24,12,8,6} );
+		Assert.assertArrayEquals(productOfArrayExceptSelf.productExceptSelfWhenElementIsZero(new int[] {-1,1,0,-3,3}), new int[] {0,0,9,0,0} );
 		printLineSeparator();
 	}
 

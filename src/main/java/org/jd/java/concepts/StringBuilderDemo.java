@@ -16,7 +16,7 @@ public class StringBuilderDemo {
 		}
 		
 		char[] charArray = input.toCharArray();
-		Map<Character, Integer> duplicatesMap = new HashMap()<>();
+		Map<Character, Integer> duplicatesMap = new HashMap<>();
 		for ( int i=0; i< charArray.length -1 ; i++) {
 			var inputChar = charArray[i];
 			int count = duplicatesMap.get(inputChar);

@@ -43,49 +43,21 @@ Follow up: Can you solve the problem in O(1) extra space complexity? (The output
 
  */
 public class ProductOfArrayExceptSelf {
-	//when the element is non-zero.
-	public int[] productExceptSelf(int[] nums) {
-		int[] result = new int[nums.length];
-		int product = Arrays.stream(nums).reduce((x,y) -> x *y).getAsInt();
-		IntStream.range(0, nums.length).forEach(x -> {
-			result[x] = product / nums[x];
-		});
-		return result;
-	}
-	
-	//situation when the element is zero.
-	//In progress. 
-	public int[] productExceptSelfIfZeroPresent(int[] nums) {
-		int[] result = new int[nums.length];
-		int productWithZeroElements = Arrays.stream(nums).reduce((x,y) -> x * y).getAsInt();
-		int productWithoutZeroElements = Arrays.stream(nums).filter(x -> x==0).reduce((x,y) -> x * y).getAsInt();
-		System.out.println("productWithZeroElements = " + productWithZeroElements + " # productWithoutZeroElements = "+productWithoutZeroElements);
-		
-		IntStream.range(0, nums.length).forEach(x -> {
-			if ( x != 0) {
-				result[x] = productWithZeroElements == 0 ? (productWithZeroElements / nums[x] ) : 0;
-			}else {
-				result[x] = productWithoutZeroElements == 0 ? (productWithoutZeroElements) : 0;
-			}
-		});
-		
-		return result;
-	}
 
 	//situation when the element is zero.
-	//In progress. 
-	public int[] productExceptSelf(int[] nums) {
+	//Warning: This solution is slow. Space Complexity is O(N^2). It needs to be improved.  
+	public int[] productExceptSelfWhenElementIsZero(int[] nums) {
 		int[] result = new int[nums.length];
-		
 		for ( int i=0 ; i< nums.length; i++) {
-			int front[] = Arrays.copyOfRange(nums, 0, i);
-			int back[] = Arrays.copyOfRange(nums, i, nums.length);
+			int front[] = Arrays.copyOfRange(nums, 0, i) ;
+			int back[] = Arrays.copyOfRange(nums, i+1, nums.length);
 			
-			int productOfNumsPrefixElements = Arrays.stream(front).reduce((x,y) -> x * y).getAsInt();
-			int productOfNumsSuffixElements = Arrays.stream(back).reduce((x,y) -> x * y).getAsInt();
+			int productOfNumsPrefixElements = ( front.length <= 0 ) ? 1 : Arrays.stream(front).reduce((x,y) -> x * y).getAsInt();
+			int productOfNumsSuffixElements =  ( back.length <= 0 ) ? 1 : Arrays.stream(back).reduce((x,y) -> x * y).getAsInt();
 			
-			
+			int productValue = productOfNumsPrefixElements * productOfNumsSuffixElements;
+			result[i] = productValue;
 		}
-		
+		return result;
 	}	
 }
